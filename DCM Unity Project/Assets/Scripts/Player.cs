@@ -1,24 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 
-    public Vector3[] previousPos = new Vector3[10];
+    public List<Vector3> previousPos;
     int i;
 
-	// Use this for initialization
+
 	void Start () {
         MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, 15);
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
-        previousPos[i] = transform.position;
-        i++;
-        if (i >= 10)
-        {
-            i = 0;
-        }
+        previousPos.Add(transform.position);
 	}
 
     private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
