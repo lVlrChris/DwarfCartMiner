@@ -27,12 +27,12 @@ public class StorageCart : MonoBehaviour {
 
         previousPos.Add(transform.position);
 
-        if(target.name == "Player" && target.GetComponent<Player>().previousPos.Count >= 10)
+        if(target.name == "Player" && target.GetComponent<Player>().previousPos.Count >= 25)
         {
             transform.position = target.GetComponent<Player>().previousPos[i];
             
         }
-        else if (target.name == "StorageCart" && target.GetComponent<StorageCart>().previousPos.Count >= 10)
+        else if (target.name == "StorageCart" && target.GetComponent<StorageCart>().previousPos.Count >= 25)
         {
             transform.position = target.GetComponent<StorageCart>().previousPos[i];
         }
