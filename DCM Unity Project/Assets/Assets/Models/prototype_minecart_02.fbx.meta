@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8f780aa960efd3f4b8821a3807d58b80
-timeCreated: 1444738844
+guid: badb02fbcf4d9964a87b964b4c5b58b2
+timeCreated: 1444743140
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: pCube2
-    6400000: //RootNode
+    4300000: prototype_minecart_02
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -37,7 +36,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
