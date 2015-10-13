@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Minecart : MonoBehaviour {
+public class StorageCart : MonoBehaviour {
 
     public GameObject target;
 
@@ -15,9 +15,9 @@ public class Minecart : MonoBehaviour {
         {
             i = target.GetComponent<Player>().previousPos.Count - 25;
         }
-        else if (target.name == "Minecart")
+        else if (target.name == "StorageCart")
         {
-            i = target.GetComponent<Minecart>().previousPos.Count - 25;
+            i = target.GetComponent<StorageCart>().previousPos.Count - 25;
         }
 	}
 	
@@ -32,9 +32,9 @@ public class Minecart : MonoBehaviour {
             transform.position = target.GetComponent<Player>().previousPos[i];
             
         }
-        else if (target.name == "Minecart" && target.GetComponent<Minecart>().previousPos.Count >= 10)
+        else if (target.name == "StorageCart" && target.GetComponent<StorageCart>().previousPos.Count >= 10)
         {
-            transform.position = target.GetComponent<Minecart>().previousPos[i];
+            transform.position = target.GetComponent<StorageCart>().previousPos[i];
         }
         transform.LookAt(target.transform);
 	}

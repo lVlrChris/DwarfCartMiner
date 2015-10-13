@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class CartController : MonoBehaviour {
 
-    public GameObject mineCart;
+    public GameObject storageCart;
     private GameObject latestCart;
     private GameObject[] allCarts;
 
@@ -18,25 +18,38 @@ public class CartController : MonoBehaviour {
         {
             SpawnCart();
         }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            DestroyCart();
+        }
 	}
 
     public void SpawnCart()
     {
         FindLatestCart();
-        GameObject GO = Instantiate(mineCart, new Vector3(0, 0, 0), mineCart.transform.rotation) as GameObject;
-        GO.GetComponent<Minecart>().target = latestCart;
-        GO.GetComponent<Minecart>().ID = latestCart.GetComponent<Minecart>().ID + 1;
-        GO.name = "Minecart";
+        GameObject GO = Instantiate(storageCart, new Vector3(0, 0, 0), storageCart.transform.rotation) as GameObject;
+        GO.GetComponent<StorageCart>().target = latestCart;
+        GO.GetComponent<StorageCart>().ID = latestCart.GetComponent<StorageCart>().ID + 1;
+        GO.name = "StorageCart";
+    }
+
+    public void DestroyCart()
+    {
+        FindLatestCart();
+        if (latestCart.GetComponent<StorageCart>().ID > 0)
+        {
+            Destroy(latestCart.gameObject);
+        }
     }
 
     private void FindLatestCart()
     {
-        allCarts = GameObject.FindGameObjectsWithTag("Minecart");
+        allCarts = GameObject.FindGameObjectsWithTag("StorageCart");
         foreach (GameObject cart in allCarts)
         {
             if (latestCart != null)
             {
-                if (cart.GetComponent<Minecart>().ID > latestCart.GetComponent<Minecart>().ID)
+                if (cart.GetComponent<StorageCart>().ID > latestCart.GetComponent<StorageCart>().ID)
                 {
                     latestCart = cart;
                 }
@@ -46,6 +59,5 @@ public class CartController : MonoBehaviour {
                 latestCart = cart;
             }
         }
-
     }
 }
