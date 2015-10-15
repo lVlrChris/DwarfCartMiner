@@ -15,6 +15,12 @@ public class Weapon : MonoBehaviour {
     public GameObject projectileSpawn;
     private GameObject projectileToFire;
 
+    public float fireTimer;
+
+    public float    shotGunCooldown,
+                    swordCooldown,
+                    machineGunCooldown;
+
 
     void Start () {
         
@@ -23,6 +29,11 @@ public class Weapon : MonoBehaviour {
 
 	void Update () {
         GetInput();
+
+        if (fireTimer >= 0)
+        {
+            fireTimer -= Time.deltaTime;
+        }
 	}
 
     private void GetInput()
@@ -41,7 +52,11 @@ public class Weapon : MonoBehaviour {
         {
             case WeaponType.Shotgun:
                 projectileToFire = allProjectiles[0];
-                Instantiate(projectileToFire, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
+                if (fireTimer <= 0)
+                {
+                    Instantiate(projectileToFire, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
+                    fireTimer = shotGunCooldown;
+                }
                 break;
             case WeaponType.MachineGun:
                 projectileToFire = allProjectiles[1];

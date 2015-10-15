@@ -6,7 +6,7 @@ public class ShotgunShell : MonoBehaviour {
     public float speed;
 
 	void Start () {
-	
+        Destroy(transform.parent.gameObject, 10);
 	}
 	
 
