@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 
 	void Update () {
         previousPos.Add(transform.position);
+
+
 	}
 
     private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
