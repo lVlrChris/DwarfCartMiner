@@ -5,36 +5,37 @@ using System.Collections.Generic;
 public class StorageCart : MonoBehaviour {
 
     public GameObject target;
-
     public int ID;
     public List<Vector3> previousPos;
-    int i;
+
+    private int frameCounter;
+    private int framesBehind = 15;
 
 	void Start () {
         if(target.name == "Player")
         {
-            i = target.GetComponent<Player>().previousPos.Count - 25;
+            frameCounter = target.GetComponent<Player>().previousPos.Count - framesBehind;
         }
         else if (target.name == "StorageCart")
         {
-            i = target.GetComponent<StorageCart>().previousPos.Count - 25;
+            frameCounter = target.GetComponent<StorageCart>().previousPos.Count - framesBehind;
         }
 	}
 	
 
 	void Update () {
-        i++;
+        frameCounter++;
 
         previousPos.Add(transform.position);
 
-        if(target.name == "Player" && target.GetComponent<Player>().previousPos.Count >= 25)
+        if(target.name == "Player" && target.GetComponent<Player>().previousPos.Count >= framesBehind)
         {
-            transform.position = target.GetComponent<Player>().previousPos[i];
+            transform.position = target.GetComponent<Player>().previousPos[frameCounter];
             
         }
-        else if (target.name == "StorageCart" && target.GetComponent<StorageCart>().previousPos.Count >= 25)
+        else if (target.name == "StorageCart" && target.GetComponent<StorageCart>().previousPos.Count >= framesBehind)
         {
-            transform.position = target.GetComponent<StorageCart>().previousPos[i];
+            transform.position = target.GetComponent<StorageCart>().previousPos[frameCounter];
         }
         transform.LookAt(target.transform);
 	}
