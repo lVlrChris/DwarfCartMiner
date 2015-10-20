@@ -21,6 +21,6 @@ public class Player : MonoBehaviour {
 
     private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
     {
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true, "lookahead", 0.01f));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true));
     }
 }
