@@ -9,7 +9,7 @@ public class StorageCart : MonoBehaviour {
     public List<Vector3> previousPos;
 
     private int frameCounter;
-    private int framesBehind = 40;
+    private int framesBehind = 20;
 
 	void Start () {
         if(target.name == "Player")
