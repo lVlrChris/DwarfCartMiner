@@ -9,8 +9,9 @@ public class DwarfEnemy : Enemy {
 	}
 	
 
-	void Update () {
-	
+	void Update () 
+    {
+        base.Update();
 	}
 
     void OnTriggerEnter(Collider other)
