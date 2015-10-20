@@ -21,9 +21,14 @@ public class Weapon : MonoBehaviour {
                     swordCooldown,
                     machineGunCooldown;
 
+    public AudioClip    shotGunSound,
+                        machineGunSound,
+                        swordSound;
+
+    private AudioSource audioSource;
 
     void Start () {
-        
+        audioSource = GetComponent<AudioSource>();
 	}
 	
 
@@ -43,7 +48,6 @@ public class Weapon : MonoBehaviour {
             LookAtMouse();
             FireWeapon();
         }
-        
     }
     
     private void FireWeapon()
@@ -56,6 +60,7 @@ public class Weapon : MonoBehaviour {
                 {
                     Instantiate(projectileToFire, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
                     fireTimer = shotGunCooldown;
+                    audioSource.PlayOneShot(shotGunSound);
                 }
                 break;
             case WeaponType.MachineGun:
