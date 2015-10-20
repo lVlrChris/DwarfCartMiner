@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 
 
 	void Start () {
-        MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, 15);
+        MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, 30);
 	}
 	
 
