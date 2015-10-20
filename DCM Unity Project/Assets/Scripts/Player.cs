@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 
 	void Start () {
         MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, 30);
+
 	}
 	
 
@@ -21,6 +22,6 @@ public class Player : MonoBehaviour {
 
     private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
     {
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true, "lookahead", 0.08f));
     }
 }
