@@ -6,10 +6,11 @@ public class Player : MonoBehaviour {
 
     public List<Vector3> previousPos;
     int i;
+    public int levelLengthInSeconds;
 
 
 	void Start () {
-        MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, 30);
+        MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, levelLengthInSeconds);
 
 	}
 	
