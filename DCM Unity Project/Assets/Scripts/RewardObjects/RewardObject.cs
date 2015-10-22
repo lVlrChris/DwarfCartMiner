@@ -1,19 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DwarfEnemy : Enemy {
+public class RewardObject : MonoBehaviour
+{
+    public int health;
+    public int goldReward;
+    public int crystalReward;
 
+    private Player playerScript;
 
-	void Start ()
+    void Start()
     {
-        base.Start();
-	}
-	
+        playerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
 
-	void Update () 
+
+    void Update()
     {
-        base.Update();
-	}
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,16 +27,17 @@ public class DwarfEnemy : Enemy {
             {
                 case "ShotgunShell":
                     TakeDamage(other.GetComponent<ShotgunShell>().damage);
-                    
+
                     break;
             }
         }
     }
 
+
     private void TakeDamage(int damage)
     {
-        curHealth -= damage;
-        if (curHealth <= 0)
+        health -= damage;
+        if (health <= 0)
         {
             Destroy(gameObject);
             playerScript.gold += goldReward;

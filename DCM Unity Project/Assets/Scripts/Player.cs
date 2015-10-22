@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
     public List<Vector3> previousPos;
     int i;
     public int levelLengthInSeconds;
+
+    public int gold;
+    public int crystal;
+
+    public Text goldText, crystalText;
 
 
 	void Start () {
@@ -17,9 +23,14 @@ public class Player : MonoBehaviour {
 
 	void Update () {
         previousPos.Add(transform.position);
-
-
+        UIUpdate();
 	}
+
+    private void UIUpdate()
+    {
+        goldText.text = "Gold: " + gold;
+        crystalText.text = "Crystal: " + crystal;
+    }
 
     private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
     {

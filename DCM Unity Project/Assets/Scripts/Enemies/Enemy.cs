@@ -9,6 +9,18 @@ public class Enemy : MonoBehaviour {
 
     public Text healthUI;
 
+    [HideInInspector]public GameObject player;
+    [HideInInspector]public Player playerScript;
+
+    public int goldReward;
+    public int crystalReward;
+
+    public void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerScript = player.GetComponent<Player>();
+    }
+
     public void Update()
     {
         UIUpdate();
