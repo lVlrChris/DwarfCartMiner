@@ -8,6 +8,8 @@ public class CartController : MonoBehaviour {
     private GameObject latestCart;
     private GameObject[] allCarts;
 
+    public int goldForNewCart;
+
 	void Start () {
 	
 	}
@@ -31,6 +33,7 @@ public class CartController : MonoBehaviour {
         GO.GetComponent<StorageCart>().target = latestCart;
         GO.GetComponent<StorageCart>().ID = latestCart.GetComponent<StorageCart>().ID + 1;
         GO.name = "StorageCart";
+        GO.GetComponent<StorageCart>().curGold = goldForNewCart;
     }
 
     public void DestroyCart()

@@ -35,8 +35,8 @@ public class DwarfEnemy : Enemy {
         if (curHealth <= 0)
         {
             Destroy(gameObject);
-            playerScript.gold += goldReward;
-            playerScript.crystal += crystalReward;
+            playerScript.GainGold(goldReward);
+            playerScript.GainCrystal(crystalReward);
         }
     }
 }

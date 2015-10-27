@@ -11,6 +11,9 @@ public class StorageCart : MonoBehaviour {
     private int frameCounter;
     private int framesBehind = 20;
 
+    public int curGold;
+    public int maxGold;
+
 	void Start () {
         if(target.name == "Player")
         {
