@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour {
     public void Update()
     {
         UIUpdate();
+        transform.LookAt(player.transform.position);
     }
 
     private void UIUpdate()
