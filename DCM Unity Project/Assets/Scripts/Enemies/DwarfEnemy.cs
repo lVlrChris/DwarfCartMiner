@@ -4,6 +4,7 @@ using System.Collections;
 public class DwarfEnemy : Enemy {
 
 
+
 	void Start ()
     {
         base.Start();
@@ -13,6 +14,7 @@ public class DwarfEnemy : Enemy {
 	void Update () 
     {
         base.Update();
+        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
 	}
 
     void OnTriggerEnter(Collider other)

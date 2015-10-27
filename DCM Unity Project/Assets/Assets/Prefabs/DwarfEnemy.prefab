@@ -313,6 +313,7 @@ MonoBehaviour:
   curHealth: 100
   maxHealth: 100
   healthUI: {fileID: 11433828}
+  moveSpeed: .300000012
   player: {fileID: 0}
   playerScript: {fileID: 0}
   goldReward: 12
@@ -453,6 +454,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: crystalReward
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveSpeed
+      value: .300000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

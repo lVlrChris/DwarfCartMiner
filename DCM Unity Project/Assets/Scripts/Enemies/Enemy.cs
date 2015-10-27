@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour {
 
     public Text healthUI;
 
+    public float moveSpeed;
+
     [HideInInspector]public GameObject player;
     [HideInInspector]public Player playerScript;
 
