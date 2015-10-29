@@ -58,7 +58,8 @@ public class Weapon : MonoBehaviour {
                 projectileToFire = allProjectiles[0];
                 if (fireTimer <= 0)
                 {
-                    Instantiate(projectileToFire, projectileSpawn.transform.position, projectileSpawn.transform.rotation);
+                    GameObject GO = Instantiate(projectileToFire, projectileSpawn.transform.position, projectileSpawn.transform.rotation) as GameObject;
+                    GO.name = "ShotgunShells";
                     fireTimer = shotGunCooldown;
                     audioSource.PlayOneShot(shotGunSound);
                 }

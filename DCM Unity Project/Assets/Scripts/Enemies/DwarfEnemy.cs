@@ -23,7 +23,7 @@ public class DwarfEnemy : Enemy {
         {
             switch (other.gameObject.name)
             {
-                case "ShotgunShell":
+                case "ShotgunShells":
                     TakeDamage(other.GetComponent<ShotgunShell>().damage);
                     
                     break;
