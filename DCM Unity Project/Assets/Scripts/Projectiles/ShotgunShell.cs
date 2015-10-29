@@ -19,20 +19,20 @@ public class ShotgunShell : MonoBehaviour {
 
 	void Update () {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        collider.size = new Vector3(collider.size.x + 1f, collider.size.y, collider.size.z);
-        if (speed > 20)
+        collider.size = new Vector3(collider.size.x + 0.5f, collider.size.y, collider.size.z);
+        if (speed > 25)
         {
-            speed -= 3f;
+            speed -= 4f;
             rightShell.transform.Translate(5 * Time.deltaTime, 0, 0, Space.Self);
             leftShell.transform.Translate(-5 * Time.deltaTime, 0, 0, Space.Self);
         }
-        else if (speed <= 30 && speed > 0)
+        else if (speed <= 25 && speed > 0)
         {
             speed -= 1f;
             rightShell.transform.Translate(1 * Time.deltaTime, 0, 0, Space.Self);
             leftShell.transform.Translate(-1 * Time.deltaTime, 0, 0, Space.Self);
         }
-        else if (speed <= 0)
+        else if (speed <= 10)
         {
             Destroy(gameObject);
         }
