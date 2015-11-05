@@ -25,7 +25,7 @@ public class RewardObject : MonoBehaviour
         {
             switch (other.gameObject.name)
             {
-                case "ShotgunShell":
+                case "ShotgunShells":
                     TakeDamage(other.GetComponent<ShotgunShell>().damage);
 
                     break;
@@ -40,8 +40,8 @@ public class RewardObject : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            playerScript.gold += goldReward;
-            playerScript.crystal += crystalReward;
+            playerScript.GainGold(goldReward);
+            playerScript.GainCrystal(crystalReward);
         }
     }
 }

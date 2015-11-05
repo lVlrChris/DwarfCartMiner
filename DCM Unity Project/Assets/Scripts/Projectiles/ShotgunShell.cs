@@ -17,7 +17,8 @@ public class ShotgunShell : MonoBehaviour {
 	}
 	
 
-	void Update () {
+	void Update ()
+    {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         collider.size = new Vector3(collider.size.x + 0.5f, collider.size.y, collider.size.z);
         if (speed > 25)

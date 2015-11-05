@@ -316,7 +316,7 @@ MonoBehaviour:
   moveSpeed: .300000012
   player: {fileID: 0}
   playerScript: {fileID: 0}
-  goldReward: 12
+  goldReward: 20
   crystalReward: 2
 --- !u!114 &11433828
 MonoBehaviour:
@@ -449,7 +449,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goldReward
-      value: 12
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: crystalReward
