@@ -24,10 +24,15 @@ public class StorageCart : MonoBehaviour {
             if (curGold <= 0)
             {
                 curGold = 25;
+                if (target.name == "Player")
+                {
+                    target.GetComponent<Player>().gold = curGold;
+                }
             }
         }
         if(target.name == "Player")
         {
+            
             frameCounter = target.GetComponent<Player>().previousPos.Count - framesBehind;
         }
         else if (target.name == "StorageCart")
