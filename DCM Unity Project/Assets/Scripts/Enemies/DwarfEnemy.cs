@@ -27,6 +27,10 @@ public class DwarfEnemy : Enemy {
                     TakeDamage(other.GetComponent<ShotgunShell>().damage);
                     
                     break;
+                case "RifleBullet":
+                    TakeDamage(other.GetComponent<RifleBullet>().damage);
+                    
+                    break;
             }
         }
     }

@@ -19,10 +19,10 @@ public class Weapon : MonoBehaviour {
 
     public float    shotGunCooldown,
                     swordCooldown,
-                    machineGunCooldown;
+                    rifleCooldown;
 
     public AudioClip    shotGunSound,
-                        machineGunSound,
+                        rifleSound,
                         swordSound;
 
     private AudioSource audioSource;
@@ -64,8 +64,15 @@ public class Weapon : MonoBehaviour {
                     audioSource.PlayOneShot(shotGunSound);
                 }
                 break;
-            case WeaponType.MachineGun:
+            case WeaponType.Rifle:
                 projectileToFire = allProjectiles[1];
+                if (fireTimer <= 0)
+                {
+                    GameObject GO = Instantiate(projectileToFire, projectileSpawn.transform.position, projectileSpawn.transform.rotation) as GameObject;
+                    GO.name = "RifleBullet";
+                    fireTimer = rifleCooldown;
+                    audioSource.PlayOneShot(rifleSound);
+                }
                 break;
             case WeaponType.Sword:
                 projectileToFire = allProjectiles[2];

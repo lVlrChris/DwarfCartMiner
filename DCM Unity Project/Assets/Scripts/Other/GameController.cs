@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using MyEnums;
 
 public class GameController : MonoBehaviour {
 
     private Player player;
+    private Weapon weapon;
     public Canvas endScreen;
 
 
@@ -12,6 +14,7 @@ public class GameController : MonoBehaviour {
 
 	void Start () 
     {
+        weapon = GameObject.FindGameObjectWithTag("Gunner").GetComponent<Weapon>();
         Time.timeScale = 1;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 	}
@@ -38,6 +41,19 @@ public class GameController : MonoBehaviour {
     {
         PlayerPrefs.SetInt("Gold", player.gold);
         Application.LoadLevel("Menu");
+    }
+
+    public void SwitchWeapon(string weap)
+    {
+        switch (weap)
+        {
+            case "ShotGun":
+                weapon.selectedWeapon = WeaponType.Shotgun;
+                break;
+            case "Rifle":
+                weapon.selectedWeapon = WeaponType.Rifle;
+                break;
+        } 
     }
 
 }

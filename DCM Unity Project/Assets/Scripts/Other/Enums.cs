@@ -4,12 +4,6 @@
     {
         Shotgun,
         Sword,
-        MachineGun
-    }
-    public enum ProjectileType
-    {
-        ShotgunShells,
-        SwordSlash,
-        MachineGunSpray
+        Rifle
     }
 }
