@@ -90,7 +90,7 @@ public class Player : MonoBehaviour {
 
     private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
     {
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true, "lookahead", 0.08f));
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true, "lookahead", 0.08f, "oncomplete", "EndGame"));
     }
 
     private void GetAllCartValues()
@@ -102,5 +102,9 @@ public class Player : MonoBehaviour {
         }
     }
 
+    private void EndGame()
+    {
+        gameController.EndGame();
+    } 
     
 }
