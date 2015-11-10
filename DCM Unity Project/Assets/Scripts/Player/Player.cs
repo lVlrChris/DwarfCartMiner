@@ -7,7 +7,10 @@ public class Player : MonoBehaviour {
 
     private CartController cartController;
     public List<Vector3> previousPos;
-    int i;
+
+    public int curHealth;
+    public int maxHealth;
+
     public int levelLengthInSeconds;
 
     public int gold;
@@ -17,11 +20,13 @@ public class Player : MonoBehaviour {
 
     public GameObject[] storageCarts;
 
+    private GameController gameController;
+
 	void Start ()
     {
+        gameController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
         MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, levelLengthInSeconds);
         cartController = GetComponent<CartController>();
-        gold = PlayerPrefs.GetInt("Gold");
         if (gold <= 0)
         {
             GetAllCartValues();
@@ -35,15 +40,13 @@ public class Player : MonoBehaviour {
         UIUpdate();
 	}
 
-    private void UIUpdate()
+    public void TakeDamage(int damage)
     {
-        goldText.text = "Gold: " + gold;
-        crystalText.text = "Crystal: " + crystal;
-    }
-
-    private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
-    {
-        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true, "lookahead", 0.08f));
+        curHealth -= damage;
+        if (curHealth <= 0)
+        {
+            gameController.ReloadLevel();
+        }
     }
 
     public void GainGold(int goldAmount)
@@ -79,6 +82,17 @@ public class Player : MonoBehaviour {
 
     }
 
+    private void UIUpdate()
+    {
+        goldText.text = "Gold: " + gold;
+        crystalText.text = "Crystal: " + crystal;
+    }
+
+    private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)
+    {
+        iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(pathLineName), "easetype", easetype, "time", time, "orientToPath", true, "lookahead", 0.08f));
+    }
+
     private void GetAllCartValues()
     {
         storageCarts = GameObject.FindGameObjectsWithTag("StorageCart");
@@ -87,4 +101,6 @@ public class Player : MonoBehaviour {
             gold += cart.GetComponent<StorageCart>().curGold;
         }
     }
+
+    
 }
