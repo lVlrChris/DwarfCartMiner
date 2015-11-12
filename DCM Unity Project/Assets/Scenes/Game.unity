@@ -2316,10 +2316,11 @@ MonoBehaviour:
   fireTimer: 0
   shotGunCooldown: .5
   swordCooldown: 0
-  rifleCooldown: 1
+  rifleCooldown: 1.5
   shotGunSound: {fileID: 8300000, guid: efda9c99a10ff6548990605b0a38f58f, type: 3}
   rifleSound: {fileID: 8300000, guid: 26f79959102dada479543af291d109ea, type: 3}
   swordSound: {fileID: 0}
+  rifleReloadSound: {fileID: 8300000, guid: 23f6dd1098f50854c9d3dfbd765eba22, type: 3}
 --- !u!23 &1444325373
 MeshRenderer:
   m_ObjectHideFlags: 0

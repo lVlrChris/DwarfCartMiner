@@ -25,7 +25,11 @@ public class Weapon : MonoBehaviour {
                         rifleSound,
                         swordSound;
 
+    public AudioClip    rifleReloadSound;
+
     private AudioSource audioSource;
+
+
 
     void Start () {
         audioSource = GetComponent<AudioSource>();
@@ -72,6 +76,7 @@ public class Weapon : MonoBehaviour {
                     GO.name = "RifleBullet";
                     fireTimer = rifleCooldown;
                     audioSource.PlayOneShot(rifleSound);
+                    Invoke("ReloadSound",0.5f);
                 }
                 break;
             case WeaponType.Sword:
@@ -89,5 +94,10 @@ public class Weapon : MonoBehaviour {
             transform.LookAt(hit.point);
             transform.rotation = new Quaternion(0.0f, transform.rotation.y, 0.0f, transform.rotation.w);
         }
+    }
+
+    private void ReloadSound()
+    {
+        audioSource.PlayOneShot(rifleReloadSound);
     }
 }
