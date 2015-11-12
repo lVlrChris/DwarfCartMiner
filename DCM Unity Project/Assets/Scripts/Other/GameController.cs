@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour {
 
 	void Start () 
     {
-        weapon = GameObject.FindGameObjectWithTag("Gunner").GetComponent<Weapon>();
+        weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Weapon>();
         Time.timeScale = 1;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 	}

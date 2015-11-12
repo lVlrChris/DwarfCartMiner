@@ -16,7 +16,6 @@ public class Player : MonoBehaviour {
     public int gold;
     public int crystal;
 
-    public Text goldText, crystalText;
 
     public GameObject[] storageCarts;
 
@@ -46,7 +45,6 @@ public class Player : MonoBehaviour {
 	void Update () 
     {
         previousPos.Add(transform.position);
-        UIUpdate();
 	}
 
     public void TakeDamage(int damage)
@@ -89,12 +87,6 @@ public class Player : MonoBehaviour {
     public void GainCrystal(int crystalAmount)
     {
 
-    }
-
-    private void UIUpdate()
-    {
-        goldText.text = "Gold: " + gold;
-        crystalText.text = "Crystal: " + crystal;
     }
 
     private void MoveOnPathLine(string pathLineName, iTween.EaseType easetype, float time)

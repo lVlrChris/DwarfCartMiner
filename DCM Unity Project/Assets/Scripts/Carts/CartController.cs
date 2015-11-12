@@ -46,20 +46,23 @@ public class CartController : MonoBehaviour {
             }
         }
 
-        float amountOfCarts = gold / 50;
-        Debug.Log(amountOfCarts);
-        for (int i = 0; i < amountOfCarts + 1; i++)
+        if (gold >= 50)
         {
-            if (gold >= 50)
+            float amountOfCarts = gold / 50;
+
+            for (int i = 0; i < amountOfCarts + 1; i++)
             {
-                goldForNewCart = 50;
+                if (gold >= 50)
+                {
+                    goldForNewCart = 50;
+                }
+                else if (gold < 50 && gold >= 0)
+                {
+                    goldForNewCart = gold;
+                }
+                gold -= 50;
+                SpawnCart();
             }
-            else if(gold < 50 && gold >= 0)
-            {
-                goldForNewCart = gold;
-            }
-            gold -= 50;
-            SpawnCart();
         }
     }
 
