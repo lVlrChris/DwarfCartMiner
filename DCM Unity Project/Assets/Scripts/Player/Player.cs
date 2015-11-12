@@ -22,14 +22,23 @@ public class Player : MonoBehaviour {
 
     private GameController gameController;
 
+    void Awake()
+    {
+    }
+
 	void Start ()
     {
         gameController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
         MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, levelLengthInSeconds);
         cartController = GetComponent<CartController>();
+        gold = PlayerPrefs.GetInt("Gold");
         if (gold <= 0)
         {
             GetAllCartValues();
+        }
+        else
+        {
+            cartController.SpawnStartCarts(gold);
         }
 	}
 	
@@ -98,13 +107,17 @@ public class Player : MonoBehaviour {
         storageCarts = GameObject.FindGameObjectsWithTag("StorageCart");
         foreach (GameObject cart in storageCarts)
         {
-            gold += cart.GetComponent<StorageCart>().curGold;
+            if (cart.GetComponent<StorageCart>().ID == 0)
+            {
+                cart.GetComponent<StorageCart>().curGold = 25;
+                gold = 25;
+            }
         }
     }
+
 
     private void EndGame()
     {
         gameController.EndGame();
     } 
-    
 }

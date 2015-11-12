@@ -19,17 +19,6 @@ public class StorageCart : MonoBehaviour {
 	void Start () 
     {
         gameController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
-        if (ID == 0)
-        {
-            if (curGold <= 0)
-            {
-                curGold = 25;
-                if (target.name == "Player")
-                {
-                    target.GetComponent<Player>().gold = curGold;
-                }
-            }
-        }
         if(target.name == "Player")
         {
             

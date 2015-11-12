@@ -10,7 +10,8 @@ public class CartController : MonoBehaviour {
 
     public int goldForNewCart;
 
-	void Start () {
+	void Start () 
+    {
 	
 	}
 	
@@ -25,6 +26,42 @@ public class CartController : MonoBehaviour {
             DestroyCart();
         }
 	}
+
+    public void SpawnStartCarts(int gold)
+    {
+        allCarts = GameObject.FindGameObjectsWithTag("StorageCart");
+        foreach (GameObject cart in allCarts)
+        {
+            if (cart.GetComponent<StorageCart>().ID == 0)
+            {
+                if (gold >= 50)
+                {
+                    cart.GetComponent<StorageCart>().curGold = 50;
+                    gold -= 50;
+                }
+                else 
+                {
+                    cart.GetComponent<StorageCart>().curGold = gold;
+                }
+            }
+        }
+
+        float amountOfCarts = gold / 50;
+        Debug.Log(amountOfCarts);
+        for (int i = 0; i < amountOfCarts + 1; i++)
+        {
+            if (gold >= 50)
+            {
+                goldForNewCart = 50;
+            }
+            else if(gold < 50 && gold >= 0)
+            {
+                goldForNewCart = gold;
+            }
+            gold -= 50;
+            SpawnCart();
+        }
+    }
 
     public void SpawnCart()
     {
@@ -63,4 +100,6 @@ public class CartController : MonoBehaviour {
             }
         }
     }
+
+    
 }
