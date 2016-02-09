@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
     public int gold;
     public int crystal;
 
+    NavMeshAgent agent;
 
     public GameObject[] storageCarts;
 
@@ -27,8 +28,10 @@ public class Player : MonoBehaviour {
 
 	void Start ()
     {
+        agent = GetComponent<NavMeshAgent>();
+        agent.SetDestination(GameObject.FindGameObjectWithTag("Exit").transform.position);
         gameController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
-        MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, levelLengthInSeconds);
+        //MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, levelLengthInSeconds);
         cartController = GetComponent<CartController>();
         gold = PlayerPrefs.GetInt("Gold");
         if (gold <= 0)
