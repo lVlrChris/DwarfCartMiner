@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using MyEnums;
 
 public class PlayerUI : MonoBehaviour {
 
     public Text goldText, crystalText;
-    public Image selectedWeapon;
+    public Image selectedGun;
 
     private Player player;
     private Weapon weapon;
 
-    public Sprite   shotgunSprite,
-                    rifleSprite;
+
 
     void Start()
     {
@@ -23,7 +21,6 @@ public class PlayerUI : MonoBehaviour {
 
 	void Update () {
         UpdateCurrencies();
-        ShowSelectedGun();
 	}
 
     private void UpdateCurrencies()
@@ -34,17 +31,6 @@ public class PlayerUI : MonoBehaviour {
 
     private void ShowSelectedGun()
     {
-        switch (weapon.selectedWeapon)
-        {
-            case WeaponType.Shotgun:
-                selectedWeapon.sprite = shotgunSprite;
-                break;
-
-            case WeaponType.Rifle:
-                selectedWeapon.sprite = rifleSprite;
-                break;
-;
-
-        }
+        
     }
 }
