@@ -8,12 +8,15 @@ public class GameController : MonoBehaviour {
     private Weapon weapon;
     public Canvas endScreen;
 
+    public bool gamePlaying;
+
 
     private GameObject[] storageCarts;
     private GameObject[] enemies;
 
 	void Start () 
     {
+        gamePlaying = true;
         weapon = GameObject.FindGameObjectWithTag("Weapon").GetComponent<Weapon>();
         Time.timeScale = 1;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -27,6 +30,7 @@ public class GameController : MonoBehaviour {
 
     public void EndGame()
     {
+        gamePlaying = false;
         Time.timeScale = 0;
         endScreen.gameObject.SetActive(true);
     }

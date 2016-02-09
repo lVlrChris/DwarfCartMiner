@@ -22,14 +22,17 @@ public class Player : MonoBehaviour {
 
     private GameController gameController;
 
+    private GameObject exit;
+
     void Awake()
     {
     }
 
 	void Start ()
     {
+        exit = GameObject.FindGameObjectWithTag("Exit");
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(GameObject.FindGameObjectWithTag("Exit").transform.position);
+        agent.SetDestination(exit.transform.position);
         gameController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
         //MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, levelLengthInSeconds);
         cartController = GetComponent<CartController>();
@@ -47,6 +50,11 @@ public class Player : MonoBehaviour {
 
 	void Update () 
     {
+        if (gameController.gamePlaying && Vector3.Distance(transform.position, exit.transform.position) < 1)
+        {
+            agent.Stop();
+            EndGame();
+        }
         previousPos.Add(transform.position);
 	}
 
