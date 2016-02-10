@@ -22,7 +22,8 @@ public class Player : MonoBehaviour {
 
     private GameController gameController;
 
-    private GameObject exit;
+    public GameObject exit;
+
 
     void Awake()
     {
@@ -32,7 +33,6 @@ public class Player : MonoBehaviour {
     {
         exit = GameObject.FindGameObjectWithTag("Exit");
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(exit.transform.position);
         gameController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<GameController>();
         //MoveOnPathLine("LevelPathLine", iTween.EaseType.linear, levelLengthInSeconds);
         cartController = GetComponent<CartController>();
@@ -45,6 +45,7 @@ public class Player : MonoBehaviour {
         {
             cartController.SpawnStartCarts(gold);
         }
+
 	}
 	
 
@@ -54,6 +55,11 @@ public class Player : MonoBehaviour {
         {
             agent.Stop();
             EndGame();
+        }
+        else
+        {
+
+            agent.SetDestination(exit.transform.position);
         }
         previousPos.Add(transform.position);
 	}
