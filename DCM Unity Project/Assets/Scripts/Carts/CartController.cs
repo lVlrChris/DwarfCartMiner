@@ -69,7 +69,7 @@ public class CartController : MonoBehaviour {
     public void SpawnCart()
     {
         FindLatestCart();
-        GameObject GO = Instantiate(storageCart, new Vector3(0, 0, 0), storageCart.transform.rotation) as GameObject;
+        GameObject GO = Instantiate(storageCart, new Vector3(50, 0, 60), storageCart.transform.rotation) as GameObject;
         GO.GetComponent<StorageCart>().target = latestCart;
         GO.GetComponent<StorageCart>().ID = latestCart.GetComponent<StorageCart>().ID + 1;
         GO.name = "StorageCart";

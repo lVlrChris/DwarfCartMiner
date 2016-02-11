@@ -24,6 +24,8 @@ public class Player : MonoBehaviour {
 
     public GameObject exit;
 
+    public bool inLevel;
+    public GameObject startPoint;
 
     void Awake()
     {
@@ -128,5 +130,18 @@ public class Player : MonoBehaviour {
     private void EndGame()
     {
         gameController.EndGame();
-    } 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Start":
+                inLevel = true;
+                break;
+            case "End":
+                inLevel = false;
+                break;
+        }
+    }
 }

@@ -12,9 +12,9 @@ public class CameraFocus : MonoBehaviour {
 	
 
 	void Update () {
-        if (target != null)
+        if (target != null && target.GetComponent<Player>().inLevel)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(target.transform.position.x, target.transform.position.y + cameraHeight, target.transform.position.z), 10 * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(target.transform.position.x, target.transform.position.y + cameraHeight, target.transform.position.z), 3 * Time.deltaTime);
         }
 	}
 }

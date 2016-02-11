@@ -25,8 +25,10 @@ public class GameController : MonoBehaviour {
 
 	void Update () 
     {
-	
+        DebugInput();
 	}
+
+
 
     public void EndGame()
     {
@@ -60,4 +62,11 @@ public class GameController : MonoBehaviour {
         } 
     }
 
+    private void DebugInput()
+    {
+        if(Input.GetKeyDown(KeyCode.KeypadMultiply))
+        {
+            player.gold -= (player.gold - 1);
+        }
+    }
 }
