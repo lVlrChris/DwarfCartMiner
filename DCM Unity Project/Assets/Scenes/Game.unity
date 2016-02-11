@@ -281,7 +281,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 77454710}
   m_Enabled: 1
   m_Radius: 200
-  m_Speed: 5
+  m_Speed: 3.5
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -4499,9 +4499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9224909c8925a24a84e662e289d01ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1
+  spawnRate: 3
   spawnTimer: 1
-  spawnAmount: 1
+  spawnAmount: 2
   spawnDistance: 40
   dwarfEnemy: {fileID: 187062, guid: 0f56233116bd6de47a8d710aa86cdfd6, type: 2}
 --- !u!4 &1893133762

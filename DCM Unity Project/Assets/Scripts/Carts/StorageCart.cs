@@ -9,7 +9,7 @@ public class StorageCart : MonoBehaviour {
     public List<Vector3> previousPos;
 
     private int frameCounter;
-    private int framesBehind = 40;
+    private int framesBehind = 50;
 
     public int curGold;
     public int maxGold;

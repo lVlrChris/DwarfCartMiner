@@ -110,9 +110,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 198872}
-  m_LocalRotation: {x: -.258819073, y: 0, z: -0, w: .965925872}
-  m_LocalPosition: {x: -.150000006, y: .478279591, z: 0}
-  m_LocalScale: {x: 1, y: 1.18571019, z: 1}
+  m_LocalRotation: {x: -0.25881907, y: 0, z: -0, w: 0.9659259}
+  m_LocalPosition: {x: -0.15, y: 0.4782796, z: 0}
+  m_LocalScale: {x: 1, y: 1.1857102, z: 1}
   m_Children: []
   m_Father: {fileID: 408018}
   m_RootOrder: 2
@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.5900002, y: -.109999999, z: 1.71000004}
+  m_LocalPosition: {x: 42.59, y: -0.11, z: 1.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441686}
@@ -138,9 +138,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166040}
-  m_LocalRotation: {x: .258819073, y: -0, z: -0, w: .965925872}
-  m_LocalPosition: {x: .149999991, y: .478279501, z: 0}
-  m_LocalScale: {x: 1, y: 1.18571019, z: 1}
+  m_LocalRotation: {x: 0.25881907, y: -0, z: -0, w: 0.9659259}
+  m_LocalPosition: {x: 0.14999999, y: 0.4782795, z: 0}
+  m_LocalScale: {x: 1, y: 1.1857102, z: 1}
   m_Children: []
   m_Father: {fileID: 408018}
   m_RootOrder: 1
@@ -151,8 +151,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -.0500000007, z: 0}
-  m_LocalScale: {x: .00999999978, y: .00999999978, z: .00999999978}
+  m_LocalPosition: {x: -0, y: -0.05, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 408018}
   m_RootOrder: 0
@@ -174,8 +174,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -198,8 +200,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -222,8 +226,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -313,11 +319,11 @@ MonoBehaviour:
   curHealth: 100
   maxHealth: 100
   healthUI: {fileID: 11433828}
-  moveSpeed: .300000012
+  moveSpeed: -0.3
   player: {fileID: 0}
   playerScript: {fileID: 0}
-  goldReward: 20
-  crystalReward: 2
+  goldReward: 5
+  crystalReward: 0
 --- !u!114 &11433828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,6 +351,7 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -389,6 +396,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!224 &22446526
 RectTransform:
   m_ObjectHideFlags: 1
@@ -396,34 +404,34 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.54539998e-06}
-  m_LocalScale: {x: 2.92714357, y: 2.92714429, z: 2.92714429}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000015454}
+  m_LocalScale: {x: 2.9271436, y: 2.9271443, z: 2.9271443}
   m_Children: []
   m_Father: {fileID: 22497126}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 8.81550004e-05, y: 44}
-  m_SizeDelta: {x: 114.839996, y: 27}
-  m_Pivot: {x: .5, y: .5}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000088155, y: 44}
+  m_SizeDelta: {x: 114.84, y: 27}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22497126
 RectTransform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149104}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: .25}
-  m_LocalScale: {x: .0197797921, y: .0197797921, z: .0197797921}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0.25}
+  m_LocalScale: {x: 0.019779792, y: 0.019779792, z: 0.019779792}
   m_Children:
   - {fileID: 22446526}
   m_Father: {fileID: 408018}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: .189998627, y: .940001845}
-  m_SizeDelta: {x: 336.140015, y: 297.880005}
-  m_Pivot: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0.18999863, y: 0.94000185}
+  m_SizeDelta: {x: 336.14, y: 297.88}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -449,15 +457,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goldReward
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: crystalReward
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveSpeed
-      value: .300000012
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
