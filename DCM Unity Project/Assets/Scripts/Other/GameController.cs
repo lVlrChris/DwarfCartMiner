@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using MyEnums;
 
@@ -40,13 +41,13 @@ public class GameController : MonoBehaviour {
     public void ReloadLevel()
     {
         PlayerPrefs.SetInt("Gold", player.gold);
-        Application.LoadLevel("Game");
+        SceneManager.LoadScene("Game");
     }
 
     public void LoadMenu()
     {
         PlayerPrefs.SetInt("Gold", player.gold);
-        Application.LoadLevel("Menu");
+        SceneManager.LoadScene("Menu");
     }
 
     public void SwitchWeapon(string weap)
@@ -67,6 +68,7 @@ public class GameController : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.KeypadMultiply))
         {
             player.gold -= (player.gold - 1);
+            PlayerPrefs.SetInt("Gold", player.gold);
         }
     }
 }
