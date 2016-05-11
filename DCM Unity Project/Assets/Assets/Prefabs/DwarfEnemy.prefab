@@ -319,7 +319,7 @@ MonoBehaviour:
   curHealth: 100
   maxHealth: 100
   healthUI: {fileID: 11433828}
-  moveSpeed: -0.3
+  moveSpeed: 0.3
   player: {fileID: 0}
   playerScript: {fileID: 0}
   goldReward: 5
@@ -465,7 +465,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: moveSpeed
-      value: -0.3
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
